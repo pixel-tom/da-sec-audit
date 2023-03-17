@@ -1,0 +1,12 @@
+.keyword {
+    font-weight: bold;
+  }
+  
+  .keyword-declaration {
+    color: #a90d91; /* You can change the color according to your preference */
+  }
+  
+  .keyword-control {
+    color: #d73a49; /* You can change the color according to your preference */
+  }
+  
