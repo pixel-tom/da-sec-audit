@@ -32,19 +32,14 @@ const Home: NextPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black text-green-300 font-mono">
+    <div className="min-h-screen min-w-screen bg-black text-green-300 font-mono">
       <header className="p-4">
         <nav className="flex items-center justify-between">
           <div className="text-xl font-semibold">
             <span className="text-slate-300">Code</span>SecurityAudit
           </div>
           <div className="flex items-center">
-            <a href="#home" className="text-lg px-4 py-2 hover:text-red-500">
-              Home
-            </a>
-            <a href="#about" className="text-lg px-4 py-2 hover:text-red-500">
-              About
-            </a>
+            
             <WalletMultiButton />
           </div>
         </nav>
