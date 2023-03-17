@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_KEY = process.env.REACT_APP_GPT_API_KEY // Replace this line with the appropriate method based on your build tool.
+const API_KEY = "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"
 const GPT_3_API_URL =
   "https://api.openai.com/v1/chat/completions";
 
