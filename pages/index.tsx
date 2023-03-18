@@ -39,20 +39,32 @@ const Home: NextPage = () => {
             <span className="text-slate-300">Code</span>SecurityAudit
           </div>
           <div className="flex items-center">
-            
             <WalletMultiButton />
           </div>
         </nav>
       </header>
       <main className="py-6 flex flex-col justify-center sm:py-12">
-        <div className="relative py-3 max-w-5xl sm:mx-auto">
-          <div className="relative px-4 py-10 shadow-lg sm:rounded-3xl sm:p-20">
-            <p className="text-center mb-6">
-              Analyze your code for security vulnerabilities, best practices,
-              and potential bugs. You can upload a file or paste your code
-              below.
-            </p>
-            <TextCompletionExample />
+        <div className="relative max-w-7xl mx-auto">
+          <div className="relative px-4 sm:rounded-3xl p-10">
+          <div className="relative max-w-7xl mx-auto">
+  <div className="relative px-4 sm:rounded-3xl">
+    <div className="max-w-4xl mx-auto">
+      <h1 className="text-3xl font-bold text-center mb-6 text-green-400">
+        Analyze your code for security vulnerabilities
+      </h1>
+      <p className="text-lg text-center mb-8 text-slate-300">
+        Get a detailed report on potential security vulnerabilities, best practices, and bugs in your code. Upload a file or paste your code below to get started.
+      </p>
+      <TextCompletionExample />
+      <div className="mt-10 p-6 bg-slate-900 rounded-md shadow-md">
+        <p className="text-sm text-white">
+          Disclaimer: This tool is for educational purposes only. Use at your own risk. We are not responsible for any damages caused by the use of this tool.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
           </div>
         </div>
       </main>

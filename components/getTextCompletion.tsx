@@ -97,7 +97,7 @@ const TextCompletionExample: React.FC = () => {
   };
 
   return (
-    <div className="text-green-300 font-mono">
+    <div className="text-slate-700 font-mono">
       <FileUploader
         onFileUpload={handleFileUpload}
         onCodeUpdate={handleCodeSubmit}
@@ -106,7 +106,7 @@ const TextCompletionExample: React.FC = () => {
       <button
         onClick={handleSubmit}
         disabled={isLoading}
-        className="w-full py-2 mt-4 bg-green-500 hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-opacity-50 disabled:opacity-50 disabled:cursor-not-allowed rounded-md"
+        className="w-full py-2 mt-4 bg-green-400 hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-opacity-50 disabled:opacity-50 disabled:cursor-not-allowed rounded-md"
       >
         {isLoading ? (
           <div className="flex justify-center items-center space-x-2">
@@ -119,7 +119,7 @@ const TextCompletionExample: React.FC = () => {
       </button>
       {showModal && (
         <div className="modal bg-black bg-opacity-75 fixed inset-0 flex items-center justify-center">
-          <div className="modal-content bg-black text-green-300 p-6 rounded-lg shadow-lg w-3/4 h-3/4 overflow-auto">
+          <div className="modal-content gradient-border bg-black text-green-300 p-6 rounded-lg shadow-lg w-3/4 h-3/4 overflow-auto">
             <button
               onClick={closeModal}
               className="close-modal text-red-500 text-2xl absolute top-2 right-2"
@@ -128,9 +128,9 @@ const TextCompletionExample: React.FC = () => {
             </button>
             {isLoading ? (
               <div className="loading-container flex flex-col items-center space-y-2">
-              <BeatLoader color="#50fa7b" />
-              <p className="text-center">{loadingText}</p>
-            </div>
+                <BeatLoader color="#50fa7b" />
+                <p className="text-center">{loadingText}</p>
+              </div>
             ) : (
               <FormattedResponse response={completion} />
             )}

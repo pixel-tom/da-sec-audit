@@ -1,6 +1,5 @@
 import { useState, useRef } from "react";
 
-
 interface FileUploaderProps {
   onFileUpload: (file: File) => void;
   onCodeUpdate: (code: string) => void;
@@ -48,14 +47,13 @@ export const FileUploader: React.FC<FileUploaderProps> = ({
   return (
     <div className="text-green-300 font-mono">
       <label className="block mb-4 text-center">
-        <span className="text-lg font-semibold">Upload a file</span>
         <input
           type="file"
           onChange={handleFileChange}
           className="hidden w-full"
           id="file-input"
         />
-        <div className="my-6 mx-auto p-4 cursor-pointer border-2 border-dashed w-5/6 border-green-500 hover:border-red-500 rounded-md">
+        <div className="my-6 mx-auto p-4 cursor-pointer border-2 border-dashed  border-green-500 hover:border-red-500 rounded-md">
           <p className="text-center">
             Click to choose a file or drag and drop it here
           </p>
@@ -69,14 +67,13 @@ export const FileUploader: React.FC<FileUploaderProps> = ({
         )}
       </p>
       <label className="block mb-4">
-        <span className="text-lg font-semibold">Paste your code</span>
         <div
           ref={codeEditorRef}
           contentEditable
           placeholder="Paste your code here"
           onInput={handleCodeChange}
           suppressContentEditableWarning={true}
-          className="code-editor overflow-y-auto w-full h-80 p-4 mt-2 bg-black text-green-300 border border-green-500 focus:border-red-500 placeholder-green-400 rounded-md whitespace-pre-wrap"
+          className="code-editor overflow-y-auto w-full h-96 p-4 mt-2 bg-black text-green-300 border border-green-500 focus:border-red-500 placeholder-green-400 rounded-md whitespace-pre-wrap"
         ></div>
       </label>
     </div>

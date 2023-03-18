@@ -66,8 +66,8 @@
   font-family: "Fira Code", monospace;
   font-size: 14px;
   line-height: 1.5;
-  color: #f8f8f2;
-  background-color: #1b1d25;
+  color: #44f79d;
+  background-color: #090a0c;
   border: 1px solid transparent;
   border-image: linear-gradient(to right, #44f79d, #0c7eff);
   border-image-slice: 1;
@@ -89,6 +89,19 @@
 .code-editor .keyword {
   color: #ff79c6;
 }
+
+.code-editor .function {
+  color: #f1fa8c; /* Your desired color for functions */
+}
+
+.code-editor .parameter {
+  color: #8be9fd; /* Your desired color for parameters */
+}
+
+.code-editor .number {
+  color: #bd93f9; /* Your desired color for numbers */
+}
+
 
 .code-editor .string {
   color: #50fa7b;
@@ -129,3 +142,21 @@
 }
 
 
+.gradient-border {
+  border: 1px solid transparent;
+  border-image: linear-gradient(to right, #44f79d, #0c7eff);
+  border-image-slice: 1;
+  border-radius: 5px;
+}
+
+.modal-content {
+  background-color: #090a0c;
+  color: #44f79d;
+  padding: 6px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  width: 75%;
+  height: 75%;
+  overflow: auto;
+  position: relative;
+}
