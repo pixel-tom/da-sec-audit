@@ -45,7 +45,7 @@ const Home: NextPage = () => {
         </nav>
       </header>
       <main className="py-6 flex flex-col justify-center sm:py-12">
-        <div className="relative py-3 sm:max-w-xl sm:mx-auto">
+        <div className="relative py-3 max-w-5xl sm:mx-auto">
           <div className="relative px-4 py-10 shadow-lg sm:rounded-3xl sm:p-20">
             <p className="text-center mb-6">
               Analyze your code for security vulnerabilities, best practices,

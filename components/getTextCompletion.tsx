@@ -92,15 +92,30 @@ const TextCompletionExample: React.FC = () => {
     }
   }, [isLoading]);
 
+  const handleTextUpdate = (text: string) => {
+    setInputText(text);
+  };
+
   return (
     <div className="text-green-300 font-mono">
-      <FileUploader onFileUpload={handleFileUpload} />
+      <FileUploader
+        onFileUpload={handleFileUpload}
+        onCodeUpdate={handleCodeSubmit}
+      />
+
       <button
         onClick={handleSubmit}
         disabled={isLoading}
-        className="w-full py-2 mt-4 bg-black border border-green-500 hover:border-red-500 disabled:opacity-50 disabled:cursor-not-allowed focus:border-red-500"
+        className="w-full py-2 mt-4 bg-green-500 hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-opacity-50 disabled:opacity-50 disabled:cursor-not-allowed rounded-md"
       >
-        Analyze
+        {isLoading ? (
+          <div className="flex justify-center items-center space-x-2">
+            <BeatLoader color="#ffffff" size={10} />
+            <span>Analyzing...</span>
+          </div>
+        ) : (
+          "Analyze"
+        )}
       </button>
       {showModal && (
         <div className="modal bg-black bg-opacity-75 fixed inset-0 flex items-center justify-center">
@@ -113,9 +128,9 @@ const TextCompletionExample: React.FC = () => {
             </button>
             {isLoading ? (
               <div className="loading-container flex flex-col items-center space-y-2">
-                <BeatLoader color="#3b82f6" />
-                <p>{loadingText}</p>
-              </div>
+              <BeatLoader color="#50fa7b" />
+              <p className="text-center">{loadingText}</p>
+            </div>
             ) : (
               <FormattedResponse response={completion} />
             )}
@@ -124,9 +139,6 @@ const TextCompletionExample: React.FC = () => {
       )}
     </div>
   );
-  
-  
-  
 };
 
 export default TextCompletionExample;
