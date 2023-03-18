@@ -54,8 +54,8 @@ const Home: NextPage = () => {
             <div className="relative max-w-7xl mx-auto">
               <div className="relative px-4 sm:rounded-3xl">
                 <div className="max-w-4xl mx-auto">
-                  <h1 className="text-3xl w-3/4 mx-auto font-bold text-center mb-6 text-green-400">
-                    Analyze your code for security vulnerabilities
+                  <h1 className="text-4xl w-3/4 mx-auto font-bold text-center mb-6 text-green-400 hacker-title">
+                    <span>Analyze your code for security vulnerabilities</span>
                   </h1>
                   <p className="text-lg text-center mb-8 text-slate-300">
                     Get a detailed report on potential security vulnerabilities,
@@ -63,7 +63,7 @@ const Home: NextPage = () => {
                     paste your code below to get started.
                   </p>
                   <TextCompletionExample />
-                  <div className="mt-10 p-6 bg-slate-900 rounded-md shadow-md">
+                  <div className="mt-20 p-6 bg-slate-900 rounded-md shadow-md">
                     <p className="text-sm text-white">
                       Disclaimer: This tool is for educational purposes only.
                       Use at your own risk. We are not responsible for any

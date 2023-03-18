@@ -66,7 +66,7 @@
   font-family: "Fira Code", monospace;
   font-size: 14px;
   line-height: 1.5;
-  color: #44f79d;
+  color: #afffd7;
   background-color: #090a0c;
   border: 1px solid transparent;
   border-image: linear-gradient(to right, #44f79d, #58a6ff);
@@ -151,12 +151,37 @@
 
 .modal-content {
   background-color: #090a0c;
-  color: #44f79d;
-  padding: 6px;
+  color: #d6d6d6;
+  padding: 20px 30px;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  width: 75%;
-  height: 75%;
+  width: 85%;
+  height: 85%;
   overflow: auto;
   position: relative;
+}
+
+/* For WebKit-based browsers (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+  width: 10px; /* Adjust the width of the scrollbar */
+  height: 10px; /* Adjust the height of the scrollbar (for horizontal scrollbars) */
+}
+
+::-webkit-scrollbar-track {
+  background: #333333; /* Set the background color of the scrollbar track */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #a0c591;
+  border-radius: 5px; /* Set the background color of the scrollbar thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Set the background color of the scrollbar thumb when hovered */
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin; /* Set the width of the scrollbar */
+  scrollbar-color: #888 #f1f1f1; /* Set the scrollbar thumb and track colors */
 }

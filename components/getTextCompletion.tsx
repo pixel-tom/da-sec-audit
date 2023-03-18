@@ -11,6 +11,11 @@ const TextCompletionExample: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [loadingText, setLoadingText] = useState("");
   const [showModal, setShowModal] = useState(false);
+  const [focusAreas, setFocusAreas] = useState({
+    security: true,
+    performance: true,
+    bestPractices: true,
+  });
 
   const MAX_TOKENS_PER_CHUNK = 3000;
 
@@ -58,7 +63,7 @@ const TextCompletionExample: React.FC = () => {
       const completions: string[] = [];
 
       for (const chunk of chunks) {
-        const textCompletion = await getTextCompletion(chunk);
+        const textCompletion = await getTextCompletion(chunk, focusAreas);
         completions.push(textCompletion);
       }
 
@@ -82,6 +87,12 @@ const TextCompletionExample: React.FC = () => {
   ];
   let messageIndex = 0;
 
+  const handleFocusAreaChange = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    setFocusAreas({ ...focusAreas, [event.target.name]: event.target.checked });
+  };
+
   useEffect(() => {
     if (isLoading) {
       const interval = setInterval(() => {
@@ -97,16 +108,44 @@ const TextCompletionExample: React.FC = () => {
   };
 
   return (
-    <div className="text-slate-700 font-mono">
+    <div className="text-slate-300 font-mono">
       <FileUploader
         onFileUpload={handleFileUpload}
         onCodeUpdate={handleCodeSubmit}
       />
-
+      <div className="flex space-x-4 mb-4">
+        <label className="inline-flex items-center">
+          <input
+            type="checkbox"
+            name="security"
+            checked={focusAreas.security}
+            onChange={handleFocusAreaChange}
+          />
+          <span className="ml-2">Security</span>
+        </label>
+        <label className="inline-flex items-center">
+          <input
+            type="checkbox"
+            name="performance"
+            checked={focusAreas.performance}
+            onChange={handleFocusAreaChange}
+          />
+          <span className="ml-2">Performance</span>
+        </label>
+        <label className="inline-flex items-center">
+          <input
+            type="checkbox"
+            name="bestPractices"
+            checked={focusAreas.bestPractices}
+            onChange={handleFocusAreaChange}
+          />
+          <span className="ml-2">Best Practices</span>
+        </label>
+      </div>
       <button
         onClick={handleSubmit}
         disabled={isLoading}
-        className="w-full py-2 mt-4 bg-green-400 hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-opacity-50 disabled:opacity-50 disabled:cursor-not-allowed rounded-md"
+        className="w-full py-2 mt-4 bg-green-600 hover:bg-green-800 focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-opacity-50 disabled:opacity-50 disabled:cursor-not-allowed rounded-md"
       >
         {isLoading ? (
           <div className="flex justify-center items-center space-x-2">
