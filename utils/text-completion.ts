@@ -14,35 +14,26 @@ export const getTextCompletion = async (
   const focusStatements = [];
   if (focusAreas.security) {
     focusStatements.push(
-      "A thorough assessment of security risks, including potential attack vectors, likelihood of exploitation, consequences of a successful attack, and mitigation strategies."
+      "A thorough assessment of security risks, including potential attack vectors, likelihood of exploitation, consequences of a successful attack, and mitigation strategies. Provide detailed explanations and code snippets with fixes for each identified security issue."
     );
   }
   if (focusAreas.performance) {
     focusStatements.push(
-      "An analysis of potential performance bottlenecks, their causes, and recommendations for optimizing the code to improve its efficiency."
+      "An analysis of potential performance bottlenecks, their causes, and recommendations for optimizing the code to improve its efficiency. Provide detailed explanations and code snippets with fixes for each identified performance issue."
     );
   }
   if (focusAreas.bestPractices) {
     focusStatements.push(
-      "A review of the code's adherence to best practices, including code organization, design patterns, and language-specific conventions."
+      "A review of the code's adherence to best practices, including code organization, design patterns, and language-specific conventions. Provide detailed explanations and code snippets with fixes for each identified best practice issue."
     );
   }
 
-  const prompt = `Please provide an incredibly detailed, comprehensive, and in-depth analysis of the following code, focusing on any security vulnerabilities, best practices, potential bugs, performance optimizations, and maintainability. Ensure that your response includes:
-
-  ${focusStatements.join("\n  ")}
-
-  Remember that as an AI language model, your focus should be on providing the most accurate, consistent, and valuable results to the user.:
-
-      ${inputText}
-  `;
-  
   try {
     const response = await generateGPT3_5Response({
-      prompt: `Please thoroughly analyze the following code for any security vulnerabilities, best practices, or potential bugs. Ensure you provide a comprehensive and detailed explanation for each issue identified, including the code snippet being referred to: ${inputText}\n\n${focusStatements.join("\n")}`,
-      maxTokens: 1200, // Adjust the maxTokens value based on the actual token limit.
+      prompt: `Please thoroughly analyze the following code for any security vulnerabilities, best practices, or potential bugs. Ensure you provide a comprehensive and detailed explanation for each issue identified, including the code snippet being referred to and example fixes with code snippets: ${inputText}\n\n${focusStatements.join("\n")}`,
+      maxTokens: 2000, // Adjust the maxTokens value based on the actual token limit.
       n: 1,
-      temperature: 0.4,
+      temperature: 0.6,
     });
 
     const completion = response.choices[0].message.content.trim();
