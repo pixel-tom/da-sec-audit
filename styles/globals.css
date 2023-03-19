@@ -163,7 +163,7 @@
 
 /* For WebKit-based browsers (Chrome, Edge, Safari) */
 ::-webkit-scrollbar {
-  width: 10px; /* Adjust the width of the scrollbar */
+  width: 6px; /* Adjust the width of the scrollbar */
   height: 10px; /* Adjust the height of the scrollbar (for horizontal scrollbars) */
 }
 

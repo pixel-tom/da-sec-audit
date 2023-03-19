@@ -53,19 +53,13 @@ export const FileUploader: React.FC<FileUploaderProps> = ({
           className="hidden w-full"
           id="file-input"
         />
-        <div className="my-6 mx-auto p-4 cursor-pointer border-2 border-dashed  border-green-500 hover:border-red-500 rounded-md">
+        <div className="my-6 mx-auto p-4 cursor-pointer border-2 border-dashed  border-green-500 hover:border-blue-400 rounded-md">
           <p className="text-center">
             Click to choose a file or drag and drop it here
           </p>
         </div>
       </label>
-      <p className="mb-4">
-        {file ? (
-          <span className="text-red-500">{file.name}</span>
-        ) : (
-          "No file chosen"
-        )}
-      </p>
+      
       <label className="block mb-4">
         <div
           ref={codeEditorRef}
