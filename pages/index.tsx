@@ -48,9 +48,9 @@ const Home: NextPage = () => {
           </div>
         </nav>
       </header>
-      <main className="py-6 flex flex-col justify-center sm:py-12">
+      <main className="py-6 flex w-full flex-col justify-center sm:py-12">
         <div className="relative max-w-7xl mx-auto">
-          <div className="relative px-4 sm:rounded-3xl p-10">
+          <div className="relative px-4 p-10">
             <div className="relative max-w-7xl mx-auto">
               <div className="relative px-4 sm:rounded-3xl">
                 <div className="max-w-4xl mx-auto">
