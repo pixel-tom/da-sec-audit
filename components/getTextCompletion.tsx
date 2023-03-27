@@ -108,44 +108,191 @@ const TextCompletionExample: React.FC = () => {
   };
 
   return (
-    <div className="text-slate-300 font-mono">
+    <div className="text-slate-300 font-sans">
       <FileUploader
         onFileUpload={handleFileUpload}
         onCodeUpdate={handleCodeSubmit}
       />
-      <div className="flex space-x-4 mb-4">
-        <label className="inline-flex items-center">
-          <input
-            type="checkbox"
-            name="security"
-            checked={focusAreas.security}
-            onChange={handleFocusAreaChange}
-          />
-          <span className="ml-2">Security</span>
-        </label>
-        <label className="inline-flex items-center">
-          <input
-            type="checkbox"
-            name="performance"
-            checked={focusAreas.performance}
-            onChange={handleFocusAreaChange}
-          />
-          <span className="ml-2">Performance</span>
-        </label>
-        <label className="inline-flex items-center">
-          <input
-            type="checkbox"
-            name="bestPractices"
-            checked={focusAreas.bestPractices}
-            onChange={handleFocusAreaChange}
-          />
-          <span className="ml-2">Best Practices</span>
-        </label>
+      <div className="mb-3 mt-8">
+        <h1>Select your report focus point:</h1>
       </div>
+      <div className="flex w-full mb-4 justify-center">
+        <button
+          className={`focus:outline-none w-1/3 mr-2 py-2 px-4 rounded-md text-white ${
+            focusAreas.security
+              ? "bg-none border-2 border-gray-400 hover:border-gray-600 active:border-gray-800"
+              : "bg-gray-800 hover:bg-gray-700 active:bg-gray-800"
+          }`}
+          onClick={() =>
+            setFocusAreas({ ...focusAreas, security: !focusAreas.security })
+          }
+        >
+          <div className="flex justify-center">
+            <svg
+              className="mr-1 my-auto"
+              height={25}
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g
+                id="SVGRepo_tracerCarrier"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></g>
+              <g id="SVGRepo_iconCarrier">
+                {" "}
+                <path
+                  d="M20.91 11.12C20.91 16.01 17.36 20.59 12.51 21.93C12.18 22.02 11.82 22.02 11.49 21.93C6.63996 20.59 3.08997 16.01 3.08997 11.12V6.72997C3.08997 5.90997 3.70998 4.97998 4.47998 4.66998L10.05 2.39001C11.3 1.88001 12.71 1.88001 13.96 2.39001L19.53 4.66998C20.29 4.97998 20.92 5.90997 20.92 6.72997L20.91 11.12Z"
+                  stroke="#ffff"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>{" "}
+                <path
+                  d="M12 12.5C13.1046 12.5 14 11.6046 14 10.5C14 9.39543 13.1046 8.5 12 8.5C10.8954 8.5 10 9.39543 10 10.5C10 11.6046 10.8954 12.5 12 12.5Z"
+                  stroke="#fff"
+                  stroke-width="1.5"
+                  stroke-miterlimit="10"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>{" "}
+                <path
+                  d="M12 12.5V15.5"
+                  stroke="#fff"
+                  stroke-width="1.5"
+                  stroke-miterlimit="10"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>{" "}
+              </g>
+            </svg>
+            <p className="my-auto">Security</p>
+          </div>
+        </button>
+        <button
+          className={`focus:outline-none w-1/3 mr-2 py-3 px-4 rounded-md text-white  ${
+            focusAreas.performance
+              ? "bg-none border-2 border-gray-400 hover:border-gray-600 active:border-gray-800"
+              : "bg-gray-800 hover:bg-gray-700 active:bg-gray-800"
+          }`}
+          onClick={() =>
+            setFocusAreas({
+              ...focusAreas,
+              performance: !focusAreas.performance,
+            })
+          }
+        >
+          <div className="flex justify-center">
+            <svg
+              className="mr-1 my-auto"
+              height={25}
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g
+                id="SVGRepo_tracerCarrier"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></g>
+              <g id="SVGRepo_iconCarrier">
+                {" "}
+                <path
+                  d="M20.91 11.12C20.91 16.01 17.36 20.59 12.51 21.93C12.18 22.02 11.82 22.02 11.49 21.93C6.63996 20.59 3.08997 16.01 3.08997 11.12V6.72997C3.08997 5.90997 3.70998 4.97998 4.47998 4.66998L10.05 2.39001C11.3 1.88001 12.71 1.88001 13.96 2.39001L19.53 4.66998C20.29 4.97998 20.92 5.90997 20.92 6.72997L20.91 11.12Z"
+                  stroke="#ffff"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>{" "}
+                <path
+                  d="M12 12.5C13.1046 12.5 14 11.6046 14 10.5C14 9.39543 13.1046 8.5 12 8.5C10.8954 8.5 10 9.39543 10 10.5C10 11.6046 10.8954 12.5 12 12.5Z"
+                  stroke="#fff"
+                  stroke-width="1.5"
+                  stroke-miterlimit="10"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>{" "}
+                <path
+                  d="M12 12.5V15.5"
+                  stroke="#fff"
+                  stroke-width="1.5"
+                  stroke-miterlimit="10"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>{" "}
+              </g>
+            </svg>
+            <p className="my-auto">Performance</p>
+          </div>
+        </button>
+        <button
+          className={`focus:outline-none w-1/3 py-2 px-4 rounded-md text-white ${
+            focusAreas.bestPractices
+              ? "bg-none border-2 border-gray-400 hover:border-gray-600 active:border-gray-800"
+              : "bg-gray-800 hover:bg-gray-700 active:bg-gray-800"
+          }`}
+          onClick={() =>
+            setFocusAreas({
+              ...focusAreas,
+              bestPractices: !focusAreas.bestPractices,
+            })
+          }
+        >
+          <div className="flex justify-center">
+            <svg
+              className="mr-1 my-auto"
+              height={25}
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g
+                id="SVGRepo_tracerCarrier"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></g>
+              <g id="SVGRepo_iconCarrier">
+                {" "}
+                <path
+                  d="M20.91 11.12C20.91 16.01 17.36 20.59 12.51 21.93C12.18 22.02 11.82 22.02 11.49 21.93C6.63996 20.59 3.08997 16.01 3.08997 11.12V6.72997C3.08997 5.90997 3.70998 4.97998 4.47998 4.66998L10.05 2.39001C11.3 1.88001 12.71 1.88001 13.96 2.39001L19.53 4.66998C20.29 4.97998 20.92 5.90997 20.92 6.72997L20.91 11.12Z"
+                  stroke="#ffff"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>{" "}
+                <path
+                  d="M12 12.5C13.1046 12.5 14 11.6046 14 10.5C14 9.39543 13.1046 8.5 12 8.5C10.8954 8.5 10 9.39543 10 10.5C10 11.6046 10.8954 12.5 12 12.5Z"
+                  stroke="#fff"
+                  stroke-width="1.5"
+                  stroke-miterlimit="10"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>{" "}
+                <path
+                  d="M12 12.5V15.5"
+                  stroke="#fff"
+                  stroke-width="1.5"
+                  stroke-miterlimit="10"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>{" "}
+              </g>
+            </svg>
+            <p className="my-auto">Maintainability</p>
+          </div>
+        </button>
+      </div>
+
       <button
         onClick={handleSubmit}
         disabled={isLoading}
-        className="w-full py-2 mt-4 bg-green-600 hover:bg-green-800 focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-opacity-50 disabled:opacity-50 disabled:cursor-not-allowed rounded-md"
+        className={`w-full py-3 mt-8 hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-opacity-50 disabled:opacity-50 disabled:cursor-not-allowed rounded-md ${
+          !isLoading ? "glowing-border" : ""
+        }`}
       >
         {isLoading ? (
           <div className="flex justify-center items-center space-x-2">
@@ -153,9 +300,10 @@ const TextCompletionExample: React.FC = () => {
             <span>Analyzing...</span>
           </div>
         ) : (
-          "Analyze"
+          "Get Report"
         )}
       </button>
+
       {showModal && (
         <div className="modal bg-black bg-opacity-75 fixed inset-0 flex items-center justify-center">
           <div className="modal-content gradient-border bg-black text-green-300 p-6 rounded-lg shadow-lg w-3/4 h-3/4 overflow-auto">

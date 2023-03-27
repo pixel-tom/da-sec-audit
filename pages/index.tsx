@@ -33,7 +33,7 @@ const Home: NextPage = () => {
   };
 
   return (
-    <div className="min-h-screen min-w-screen bg-black text-green-300 font-mono">
+    <div className="min-h-screen min-w-screen bg-gradient-to-br from-gray-800 to-gray-900 text-gray-200 font-sans">
       <header className="p-4">
         <nav className="flex items-center justify-between">
           <div className="text-xl font-semibold">
@@ -50,21 +50,21 @@ const Home: NextPage = () => {
       </header>
       <main className="py-6 flex w-full flex-col justify-center sm:py-12">
         <div className="relative max-w-7xl mx-auto">
-          <div className="relative px-4 p-10">
+          <div className="relative px-4">
             <div className="relative max-w-7xl mx-auto">
-              <div className="relative px-4 sm:rounded-3xl">
+              <div className="relative p-8 bg-gradient-to-br from-gray-700 to-gray-800 sm:rounded-3xl shadow-lg">
                 <div className="max-w-4xl mx-auto">
-                  <h1 className="text-4xl w-3/4 mx-auto font-bold text-center mb-6 text-green-400 hacker-title">
+                  <h1 className="text-4xl w-3/4 mx-auto font-bold text-center mb-6 text-gray-300">
                     <span>Analyze your code for security vulnerabilities</span>
                   </h1>
-                  <p className="text-lg text-center mb-8 text-slate-300">
+                  <p className="text-lg text-center mb-8 text-gray-400">
                     Get a detailed report on potential security vulnerabilities,
                     best practices, and bugs in your code. Upload a file or
                     paste your code below to get started.
                   </p>
                   <TextCompletionExample />
-                  <div className="mt-20 p-6 bg-slate-900 rounded-md shadow-md">
-                    <p className="text-sm text-white">
+                  <div className="mt-20 p-6 bg-gradient-to-br from-gray-600 to-gray-700 rounded-md shadow-md">
+                    <p className="text-sm text-gray-300">
                       Disclaimer: This tool is for educational purposes only.
                       Use at your own risk. We are not responsible for any
                       damages caused by the use of this tool.
@@ -76,7 +76,7 @@ const Home: NextPage = () => {
           </div>
         </div>
       </main>
-      <footer className="p-4 mt-auto text-center border-t border-green-500">
+      <footer className="p-4 mt-auto text-center border-t border-gray-700">
         <p className="text-sm">
           &copy; {new Date().getFullYear()} CodeSecurityAudit. All rights
           reserved.
@@ -85,6 +85,7 @@ const Home: NextPage = () => {
       </footer>
     </div>
   );
+  
 };
 
 export default Home;

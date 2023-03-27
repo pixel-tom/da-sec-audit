@@ -45,7 +45,7 @@ export const FileUploader: React.FC<FileUploaderProps> = ({
   const codeEditorRef = useRef<HTMLDivElement>(null);
 
   return (
-    <div className="text-green-300 font-mono">
+    <div className="text-green-300 font-sans">
       <label className="block mb-4 text-center">
         <input
           type="file"
@@ -60,7 +60,7 @@ export const FileUploader: React.FC<FileUploaderProps> = ({
         </div>
       </label>
       
-      <label className="block mb-4">
+      <label className="block mb-4 font-mono">
         <div
           ref={codeEditorRef}
           contentEditable

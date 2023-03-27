@@ -13,24 +13,32 @@ export const getTextCompletion = async (
 ): Promise<string> => {
   const focusStatements = [];
   if (focusAreas.security) {
-    focusStatements.push(
-      "A thorough assessment of security risks, including potential attack vectors, likelihood of exploitation, consequences of a successful attack, and mitigation strategies. Provide detailed explanations and code snippets with fixes for each identified security issue."
-    );
+    focusStatements.push("- Security");
   }
   if (focusAreas.performance) {
-    focusStatements.push(
-      "An analysis of potential performance bottlenecks, their causes, and recommendations for optimizing the code to improve its efficiency. Provide detailed explanations and code snippets with fixes for each identified performance issue."
-    );
+    focusStatements.push("- Performance");
   }
   if (focusAreas.bestPractices) {
-    focusStatements.push(
-      "A review of the code's adherence to best practices, including code organization, design patterns, and language-specific conventions. Provide detailed explanations and code snippets with fixes for each identified best practice issue."
-    );
+    focusStatements.push("- Best Practices");
   }
 
   try {
     const response = await generateGPT3_5Response({
-      prompt: `Please thoroughly analyze the following code for any security vulnerabilities, best practices, or potential bugs. Ensure you provide a comprehensive and detailed explanation for each issue identified, including the code snippet being referred to and example fixes with code snippets: ${inputText}\n\n${focusStatements.join("\n")}`,
+      prompt: `Please thoroughly analyze the following code for any security vulnerabilities, best practices, or potential bugs:
+
+Code:
+${inputText}
+
+Focus Areas:
+${focusStatements.join("\n")}
+
+Ensure you provide a comprehensive and detailed explanation for each issue identified in the following format:
+
+1. Issue description
+   - Code snippet being referred to
+   - Explanation of the issue
+   - Example fix with code snippet
+`,
       maxTokens: 2000, // Adjust the maxTokens value based on the actual token limit.
       n: 1,
       temperature: 0.6,

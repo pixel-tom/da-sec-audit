@@ -67,7 +67,7 @@
   font-size: 14px;
   line-height: 1.5;
   color: #afffd7;
-  background-color: #090a0c;
+  background-color: #262d3a;
   border: 1px solid transparent;
   border-image: linear-gradient(to right, #44f79d, #58a6ff);
   border-image-slice: 1;
@@ -125,23 +125,6 @@
   background-color: #ff79c6;
 }
 
-.hacker-style p {
-  animation: hacker-type 2s steps(20) infinite;
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 2px solid #50fa7b;
-}
-
-@keyframes hacker-type {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-
 .gradient-border {
   border: 1px solid transparent;
   border-image: linear-gradient(to right, #44f79d, #0c7eff);
@@ -150,7 +133,7 @@
 }
 
 .modal-content {
-  background-color: #090a0c;
+  background-color: #242935;
   color: #d6d6d6;
   padding: 20px 30px;
   border-radius: 5px;
@@ -185,3 +168,21 @@
   scrollbar-width: thin; /* Set the width of the scrollbar */
   scrollbar-color: #888 #f1f1f1; /* Set the scrollbar thumb and track colors */
 }
+
+
+@keyframes glowing {
+  0% {
+    box-shadow: 0 0 5px #5da177, 0 0 10px #5b78a5, 0 0 20px #5da177, 0 0 40px #5b78a5;
+  }
+  50% {
+    box-shadow: 0 0 10px #5b78a5, 0 0 20px #5da177, 0 0 30px #5b78a5, 0 0 50px #5b78a5;
+  }
+  100% {
+    box-shadow: 0 0 5px #5da177, 0 0 10px #5b78a5, 0 0 20px #5da177, 0 0 40px #5b78a5;
+  }
+}
+
+.glowing-border {
+  animation: glowing 2s infinite;
+}
+
